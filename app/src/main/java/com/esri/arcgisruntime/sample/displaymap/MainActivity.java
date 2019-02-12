@@ -33,14 +33,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // inflate MapView from layout
         mMapView = (MapView) findViewById(R.id.mapView);
+//        displayMapByWebMapUrl();
+        displayMapByLayerUrl();
+    }
 
+    /**
+     * 使用图层URL来显示地图
+     */
+    private void displayMapByLayerUrl() {
         String urlpath = "http://cache1.arcgisonline.cn/arcgis/rest/services/ChinaOnlineCommunity_Mobile/MapServer";
         ArcGISTiledLayer layer = new ArcGISTiledLayer(urlpath);
         Basemap basemap = new Basemap(layer);
         ArcGISMap map = new ArcGISMap(basemap);
         // set the map to be displayed in this view
+        mMapView.setMap(map);
+    }
+
+    /**
+     * 使用web map URL来显示地图
+     */
+    private void displayMapByWebMapUrl() {
+        String webMapURL = "https://www.arcgis.com/home/webmap/viewer.html?webmap=69fdcd8e40734712aaec34194d4b988c";
+        Basemap basemap = new Basemap(webMapURL);
+        ArcGISMap map = new ArcGISMap(basemap);
         mMapView.setMap(map);
     }
 
