@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Display Map</string>
+    <!-- arcgis online portal url -->
+    <string name="portal_url">http://www.arcgis.com/</string>
+    <string name="item_id">a13c3c3540144967bc933cb5e498b8e4</string>
+    <string name="location_permission_denied">Open Mobile Map Package could not open because WRITE permission was denied.</string>
 </resources>
